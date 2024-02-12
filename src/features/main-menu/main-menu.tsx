@@ -38,7 +38,7 @@ export const MainMenu = async () => {
               <MessageCircle {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          <MenuItem tooltip="Persona">
+{/*           <MenuItem tooltip="Persona">
             <MenuLink href="/persona">
               <VenetianMask {...menuIconProps} />
             </MenuLink>
@@ -52,13 +52,28 @@ export const MainMenu = async () => {
             <MenuLink href="/prompt">
               <Book {...menuIconProps} />
             </MenuLink>
-          </MenuItem>
+          </MenuItem> */}
           {user.isAdmin && (
             <>
-              <MenuItem tooltip="reporting">
+{/*               <MenuItem tooltip="reporting">
                 <MenuLink href="/reporting">
                   <Sheet {...menuIconProps} />
-                </MenuLink>
+                  </MenuLink>
+          </MenuItem> */}
+                    <MenuItem tooltip="Persona">
+            <MenuLink href="/persona">
+              <VenetianMask {...menuIconProps} />
+            </MenuLink>
+          </MenuItem>
+                    <MenuItem tooltip="prompts">
+                    <MenuLink href="/prompt">
+                    <Book {...menuIconProps} />
+                    </MenuLink>
+          </MenuItem>
+                      <MenuItem tooltip="extensions">
+                      <MenuLink href="/extensions">
+                      <PocketKnife {...menuIconProps} />
+            </MenuLink>
               </MenuItem>
             </>
           )}
