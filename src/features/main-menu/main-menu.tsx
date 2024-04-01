@@ -52,28 +52,13 @@ export const MainMenu = async () => {
             <MenuLink href="/prompt" ariaLabel="Go to the Prompt Library configuration page">
               <Book {...menuIconProps} />
             </MenuLink>
-          </MenuItem> */}
+          </MenuItem>
           {user.isAdmin && (
             <>
               <MenuItem tooltip="reporting">
                 <MenuLink href="/reporting" ariaLabel="Go to the Admin reporting" >
                   <Sheet {...menuIconProps} />
-                  </MenuLink>
-          </MenuItem> */}
-                    <MenuItem tooltip="Persona">
-            <MenuLink href="/persona">
-              <VenetianMask {...menuIconProps} />
-            </MenuLink>
-          </MenuItem>
-                    <MenuItem tooltip="prompts">
-                    <MenuLink href="/prompt">
-                    <Book {...menuIconProps} />
-                    </MenuLink>
-          </MenuItem>
-                      <MenuItem tooltip="extensions">
-                      <MenuLink href="/extensions">
-                      <PocketKnife {...menuIconProps} />
-            </MenuLink>
+                </MenuLink>
               </MenuItem>
             </>
           )}
