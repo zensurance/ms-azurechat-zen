@@ -1,6 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import AzureADProvider from "next-auth/providers/azure-ad";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 // import GitHubProvider from "next-auth/providers/github";
 import { Provider } from "next-auth/providers/index";
 import { hashValue } from "./helpers";
@@ -49,6 +50,23 @@ const configureIdentityProvider = () => {
           };
           return newProfile;
         },
+      })
+    );
+  }
+
+  if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
+    providers.push(
+      GoogleProvider({
+        clientId: process.env.GOOGLE_CLIENT_ID!,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        async profile(profile) {
+          const newProfile = {
+            ...profile,
+            id: profile.sub,
+            isAdmin: adminEmails.includes(profile.email.toLowerCase())
+          }
+          return newProfile;
+        }
       })
     );
   }
