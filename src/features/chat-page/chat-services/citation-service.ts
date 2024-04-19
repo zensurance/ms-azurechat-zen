@@ -100,14 +100,14 @@ export const FindCitationByID = async (
   }
 };
 
-export const FormatCitations = (citation: DocumentSearchResponse[]) => {
+export const FormatCitations = (citation: any[]) => {
   const withoutEmbedding: DocumentSearchResponse[] = [];
   citation.forEach((d) => {
     withoutEmbedding.push({
       score: d.score,
       document: {
-        metadata: d.document.metadata,
-        pageContent: d.document.pageContent,
+        metadata: d.document.metadata || d.document.title,
+        pageContent: d.document.pageContent || d.document.search.captions.text,
         chatThreadId: d.document.chatThreadId,
         id: "",
         user: "",

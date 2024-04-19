@@ -24,6 +24,8 @@ const azureEnvVars = [
   "AZURE_SPEECH_REGION",
   "AZURE_SPEECH_KEY",
   "AZURE_KEY_VAULT_NAME",
+  "GOOGLE_CLIENT_ID",
+  "GOOGLE_CLIENT_SECRET"
 ] as const;
 
 type RequiredServerEnvKeys = (typeof azureEnvVars)[number];
