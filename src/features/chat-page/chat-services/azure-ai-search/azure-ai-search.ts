@@ -16,8 +16,6 @@ import {
 } from "@azure/search-documents";
 
 export interface AzureSearchDocumentIndex {
-  search: any;
-  title: string;
   id: string;
   pageContent: string;
   embedding?: number[];
