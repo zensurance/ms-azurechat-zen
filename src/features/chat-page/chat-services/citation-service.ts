@@ -100,13 +100,16 @@ export const FindCitationByID = async (
   }
 };
 
+// metadata = filename
+// pageContent = text from document
+// ChatThreadId = idneitifier for which chat thread the document was used for
 export const FormatCitations = (citation: any[]) => {
   const withoutEmbedding: DocumentSearchResponse[] = [];
   citation.forEach((d) => {
     withoutEmbedding.push({
       score: d.score,
       document: {
-        metadata: d.document.metadata || d.document.title,
+        metadata: d.document.metadata || d.document.title, 
         pageContent: d.document.pageContent || d.document.search.captions.text || d.document.chunk,
         chatThreadId: d.document.chatThreadId,
         id: "",
