@@ -27,7 +27,7 @@ export const LogIn: FC<LoginProps> = (props) => {
           <span className="text-primary">{AI_NAME}</span>
         </CardTitle>
         <CardDescription>
-          Login with your Zensurance Employee account
+          Login with your Zensurance Employee account using the button below
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
