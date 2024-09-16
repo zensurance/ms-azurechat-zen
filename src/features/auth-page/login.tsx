@@ -14,6 +14,8 @@ import {
 
 interface LoginProps {
   isDevMode: boolean;
+  githubEnabled: boolean;
+  entraIdEnabled: boolean;
 }
 
 export const LogIn: FC<LoginProps> = (props) => {
@@ -31,10 +33,9 @@ export const LogIn: FC<LoginProps> = (props) => {
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        {/* <Button onClick={() => signIn("github")}>GitHub</Button> */}
         <Button onClick={() => signIn("google")}>Zensurance Employee</Button>
         <Button onClick={() => signIn("azure-ad")}>Admin</Button>
-{/*         {props.isDevMode ? (
+      {/*   {props.isDevMode ? (
           <Button onClick={() => signIn("localdev")}>
             Basic Auth (DEV ONLY)
           </Button>
